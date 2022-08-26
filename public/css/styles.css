@@ -1,0 +1,248 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  margin: 0;
+}
+.flash {
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  padding-top: 1rem;
+  background:  hsl(185, 56%, 58%);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  display:none;
+  border-radius: 10px;
+  transition: height .4s;
+}
+.flash--visible {
+  height: auto;
+  display: flex;
+  transition: height .2s;
+}
+.container {
+  margin-top: 80px;
+  text-align: center;
+}
+.btn {
+  width: 400px;
+  padding: 10px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:active,.btn:focus {
+  outline: 0;
+}
+.btn:active {
+  background: #eee;  
+}
+.card-header{
+  background-color: hsl(185, 56%, 58%);
+  color: hsl(0, 0%, 100%);
+  /* position: absolute; */
+  /* top: 15%; */
+  /* left:50%; */
+  /* transform: translate(-50%,-50%); */
+  /* box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.2); */
+  padding: 0.5rem 0.5rem;
+  font-weight:20;
+  font-family: 'Times New Roman', serif;/*Georgia, serif;*/
+  text-align: center;
+  }
+.card-header:first-child{
+  border: 2px hsl(185, 75%, 39%) solid;
+  border-radius: 7px;
+}
+
+.main-body{
+  background-color: hsl(185, 75%, 39%);
+  margin: 0;
+  height:100%;
+  overflow: hidden;
+  position: relative;
+}
+.circular-pattern-top{
+  position: relative;
+  bottom:70%;
+  right: 23%;
+}
+.circular-pattern-bottom{
+  position: relative;
+left: 50%;
+bottom: 93%;
+}
+.card{
+background-color: white;
+position: absolute;
+top: 50%; 
+left:50%;
+height: 90%;
+width: 80%; 
+transform: translate(-50%,-50%);
+border-radius: 1em;
+box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.2);
+padding: 2rem;
+}
+.bold{
+  font-family: 'Nunito', sans-serif;
+  /* font-weight: 800; */
+  font-size: 20px;
+  color: hsl(227, 10%, 46%);
+}
+
+.changer .btn{
+  background-color: hsl(185, 75%, 39%);
+  text-align: center;
+  padding: 8px 18px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.changer .btn:hover{
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(185, 75%, 39%);
+  border: 2px hsl(185, 75%, 39%) solid;
+}
+
+.card .row{
+  vertical-align: middle;
+}
+
+textarea[type=text] {
+  width: 100%;
+  padding: 12px 12px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  height: 200px;
+  font-size: 1rem;
+}
+
+textarea::-webkit-input-placeholder {
+    font-size: 2rem;
+    /* line-height: 3; */
+    color: hsl(0, 0%, 75%);
+}
+
+.set-font{
+  font-size: 1.0rem; 
+  word-spacing: 4px;
+}
+
+@media (max-width:991px) {
+  .circular-pattern-top{
+    height: 100px;
+  }
+  .circular-pattern-bottom{
+    position: relative;
+  left: 50%;
+  bottom: 93%;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .card{
+    width: 90%;
+  }
+  .card-header{
+    font-size: 2rem;
+  }
+  textarea[type=text]{
+    height: 190px;
+  }
+  textarea::-webkit-input-placeholder {
+    font-size: 1.8rem;
+  }
+  .bold{
+    font-size: 18px;
+  }
+  .changer .btn{
+    margin-top: 30px;
+  }
+  .container{
+    margin-top: 30px;
+  }
+}
+.drop{
+   position: relative;
+   display: inline-block;
+   text-decoration: underline;
+   text-decoration-color: red;
+   text-decoration-thickness: 2px;
+}
+
+.drop_menu{
+   position: absolute;
+   background-color:  hsl(185, 75%, 39%);
+   color: white;
+   padding: 5px 15px 5px 15px;
+   border-radius: 5px;
+   display: none;
+   cursor: pointer;
+}
+
+.drop:hover .drop_menu{
+   display: block;
+}
+
+li {
+  display: inline;
+  list-style: none;
+}
+
+@media (max-width:576px){
+  .card-header{
+    font-size:1.6rem;
+  }
+  textarea[type=text]{
+    height: 170px;
+    font-size: 0.8rem;
+  }
+  textarea::-webkit-input-placeholder {
+    font-size: 1.4rem;
+  }
+  .set-font{
+    font-size: 0.8rem; 
+  }
+  .bold{
+    font-size: 16px;
+  }
+  .changer .btn{
+    margin-top: 18px;
+  }
+  .container{
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 360px){
+  textarea[type=text]{
+    height: 165px;
+  }
+  .bold{
+    font-size: 15px;
+  }
+  .container{
+    margin-top: 0;
+  }
+  .changer .btn{
+    margin-top: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 768px){
+  .changer .btn{
+    margin-top: 25px;
+  }
+  .container{
+    margin-top: 40px;
+  }
+}

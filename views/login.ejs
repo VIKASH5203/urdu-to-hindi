@@ -1,0 +1,73 @@
+<! DOCTYPE html>
+<html>
+<head>
+<title>LOGIN</title>
+
+<!-- bootstrap  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="loginbox">
+        <h1>SIGN-IN</h1>
+
+    <form id="myForm">
+        <div class="form-group sp">
+          <label for="exampleInputEmail1">username</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username" required name="username">
+        </div>
+        <div class="form-group sp">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="password">
+        </div>
+       <div class="center">
+       
+        <button type="submit"  class="btn but">Login!</button>
+    </div>
+      </form>
+    </div>
+</body>
+<script>
+    
+    localStorage.removeItem('token')
+    const myForm = document.getElementById('myForm')
+    myForm.addEventListener('submit',(e)=>{
+
+      let username =  document.querySelector('#exampleInputEmail1').value
+      let password =  document.querySelector('#exampleInputPassword1').value
+      e.preventDefault()
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+      var urlencoded = new URLSearchParams();
+      urlencoded.append("username", username);
+      urlencoded.append("password", password);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: 'follow'
+      };
+
+      fetch("/user/login", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+              console.log(result)
+              if(result['message'] != undefined)
+                alert(result['message'])
+              else{
+                console.log(result['token'])
+                localStorage.setItem('token',result['token'])
+                window.location.replace('/user_controller')
+              }
+           }
+        )
+        .catch(error => console.log('error', error)); 
+  })
+
+</script>
+</html>
