@@ -1,4 +1,4 @@
-# Innoreva-Backend
+# Urdu-to Hindi
 This repo is for the backend codes.
 ##  npm install 
     to install node modules
